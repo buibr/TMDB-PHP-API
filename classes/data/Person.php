@@ -1,4 +1,10 @@
 <?php
+
+namespace buibr\tmdbapi\classes\data;
+
+use buibr\tmdbapi\classes\roles\MovieRole;
+use buibr\tmdbapi\classes\roles\TVShowRole;
+
 /**
  * 	This class handles all the data you can get from a Person
  *

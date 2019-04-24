@@ -2,6 +2,20 @@
 
 namespace buibr\tmdbapi;
 
+use buibr\tmdbapi\classes\config\APIConfiguration;
+use buibr\tmdbapi\classes\config\Configuration;
+use buibr\tmdbapi\classes\data\Collection;
+use buibr\tmdbapi\classes\data\Company;
+use buibr\tmdbapi\classes\data\Episode;
+use buibr\tmdbapi\classes\data\Genre;
+use buibr\tmdbapi\classes\data\Movie;
+use buibr\tmdbapi\classes\data\Person;
+use buibr\tmdbapi\classes\data\Role;
+use buibr\tmdbapi\classes\data\Season;
+use buibr\tmdbapi\classes\data\TVShow;
+use buibr\tmdbapi\classes\roles\MovieRole;
+use buibr\tmdbapi\classes\roles\TVShowRole;
+
 /**
  * TMDB API v3 PHP class - wrapper to API version 3 of 'themoviedb.org
  * API Documentation: http://help.themoviedb.org/kb/api/about-3
@@ -100,20 +114,6 @@ namespace buibr\tmdbapi;
  * 		Collection Info 	http://api.themoviedb.org/3/collection/11
  * 		Person images		http://api.themoviedb.org/3/person/287/images
  */
-
-require ("controller/classes/data/Collection.php");
-require ("controller/classes/data/Company.php");
-require ("controller/classes/data/Episode.php");
-require ("controller/classes/data/Genre.php");
-require ("controller/classes/data/Movie.php");
-require ("controller/classes/data/Person.php");
-require ("controller/classes/data/Role.php");
-require ("controller/classes/data/Season.php");
-require ("controller/classes/data/TVShow.php");
-require ("controller/classes/roles/MovieRole.php");
-require ("controller/classes/roles/TVShowRole.php");
-require ("controller/classes/config/APIConfiguration.php");
-require ("controller/classes/config/Configuration.php");
 
 
 class TMDB {

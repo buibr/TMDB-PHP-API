@@ -1,6 +1,11 @@
 <?php
+
+namespace buibr\tmdbapi\classes\roles;
+
+use buibr\tmdbapi\classes\data\Role;
+
 /**
- * 	This class handles all the data you can get from a MovieRole
+ * 	This class handles all the data you can get from a TVShowRole
  *
  *	@package TMDB-V3-PHP-API
  * 	@author Alvaro Octal | <a href="https://twitter.com/Alvaro_Octal">Twitter</a>
@@ -10,7 +15,7 @@
  * 	@copyright Licensed under BSD (http://www.opensource.org/licenses/bsd-license.php)
  */
 
-class MovieRole extends Role{
+class TVShowRole extends Role{
 
     //------------------------------------------------------------------------------
     // Class Variables
@@ -21,7 +26,7 @@ class MovieRole extends Role{
     /**
      * 	Construct Class
      *
-     * 	@param array $data An array with the data of a MovieRole
+     * 	@param array $data An array with the data of a TVShowRole
      */
     public function __construct($data, $idPerson) {
         $this->_data = $data;
@@ -34,39 +39,39 @@ class MovieRole extends Role{
     //------------------------------------------------------------------------------
 
     /** 
-     *  Get the Movie's title of the role
+     *  Get the TVShow's title of the role
      *
      *  @return string
      */
-    public function getMovieTitle() {
-        return $this->_data['title'];
+    public function getTVShowName() {
+        return $this->_data['name'];
     }
 
     /** 
-     *  Get the Movie's id
+     *  Get the TVShow's id
      *
      *  @return int
      */
-    public function getMovieID() {
+    public function getTVShowID() {
         return $this->_data['id'];
     }
 
     /** 
-     *  Get the Movie's original title of the role
+     *  Get the TVShow's original title of the role
      *
      *  @return string
      */
-    public function getMovieOriginalTitle() {
-        return $this->_data['original_title'];
+    public function getTVShowOriginalTitle() {
+        return $this->_data['original_name'];
     }
 
     /** 
-     *  Get the Movie's release date of the role
+     *  Get the TVShow's release date of the role
      *
      *  @return string
      */
-    public function getMovieReleaseDate() {
-        return $this->_data['release_date'];
+    public function getTVShowFirstAirDate() {
+        return $this->_data['first_air_date'];
     }
 
     //------------------------------------------------------------------------------

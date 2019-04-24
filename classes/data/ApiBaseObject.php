@@ -1,5 +1,9 @@
 <?php
 
+namespace buibr\tmdbapi\classes\data;
+
+use buibr\tmdbapi\classes\data\Person;
+
 /**
  * 	This class is the base class for all data all the data you can get from a Movie
  *

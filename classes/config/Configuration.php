@@ -1,4 +1,8 @@
 <?php
+
+
+namespace buibr\tmdbapi\classes\config;
+
 /**
  *  This class handles the user Configuration
  *

@@ -1,4 +1,7 @@
 <?php
+
+namespace buibr\tmdbapi\classes\data;
+
 /**
  * 	This class handles all the data you can get from a Episode
  *

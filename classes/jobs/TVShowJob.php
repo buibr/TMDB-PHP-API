@@ -1,4 +1,7 @@
 <?php
+
+namespace buibr\tmdbapi\classes\jobs;
+
 /**
  * 	This class handles the data you can get from a TVShow job
  *

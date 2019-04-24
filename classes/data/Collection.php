@@ -1,4 +1,9 @@
 <?php
+
+namespace buibr\tmdbapi\classes\data;
+
+use buibr\tmdbapi\classes\data\Movie;
+
 /**
  * 	This class handles all the data you can get from a Collection
  *

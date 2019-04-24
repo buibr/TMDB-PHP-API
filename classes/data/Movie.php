@@ -1,4 +1,12 @@
 <?php
+
+namespace buibr\tmdbapi\classes\data;
+
+use buibr\tmdbapi\classes\data\Company;
+use buibr\tmdbapi\classes\data\Genre;
+use buibr\tmdbapi\classes\data\Person;
+use buibr\tmdbapi\classes\data\Review;
+
 /**
  * 	This class handles all the data you can get from a Movie
  *

@@ -1,4 +1,10 @@
 <?php
+
+namespace buibr\tmdbapi\classes\data;
+
+use buibr\tmdbapi\classes\data\Season;
+
+
 /**
  * 	This class handles all the data you can get from a TVShow
  *

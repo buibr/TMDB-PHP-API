@@ -1,16 +1,19 @@
 <?php
+
+namespace buibr\tmdbapi\classes\data;
+
 /**
- *  This class handles all the data you can get from a Company
+ *  This class handles all the data you can get from a Review
  *
  *	@package TMDB-V3-PHP-API
  *  @author Alvaro Octal | <a href="https://twitter.com/Alvaro_Octal">Twitter</a>
  *  @version 0.1
- *  @date 11/01/2015
+ *  @date 31/03/2016
  *  @link https://github.com/Alvaroctal/TMDB-PHP-API
  *  @copyright Licensed under BSD (http://www.opensource.org/licenses/bsd-license.php)
  */
 
-class Company {
+class Review {
 
     //------------------------------------------------------------------------------
     // Class Variables
@@ -21,7 +24,7 @@ class Company {
     /**
      *  Construct Class
      *
-     *  @param array $data An array with the data of a Company
+     *  @param array $data An array with the data of a Review
      */
     public function __construct($data) {
         $this->_data = $data;
@@ -32,81 +35,39 @@ class Company {
     //------------------------------------------------------------------------------
 
     /** 
-     *  Get the Company's name
-     *
-     *  @return string
-     */
-    public function getName() {
-        return $this->_data['name'];
-    }
-
-    /** 
-     *  Get the Company's id
+     *  Get the Review's id
      *
      *  @return int
-     */
+     **/
     public function getID() {
         return $this->_data['id'];
     }
 
     /** 
-     *  Get the Company's description
+     *  Get the Review's author
      *
      *  @return string
      */
-    public function getDescription() {
-        return $this->_data['description'];
+    public function getAuthor() {
+        return $this->_data['author'];
     }
 
     /** 
-     *  Get the Company's headquearters
+     *  Get the Review's content
      *
      *  @return string
      */
-    public function getHeadquarters() {
-        return $this->_data['headquarters'];
+    public function getContent() {
+        return $this->_data['content'];
     }
 
     /** 
-     *  Get the Company's homepage
+     *  Get the Review's url
      *
      *  @return string
      */
-    public function getHomepage() {
-        return $this->_data['homepage'];
-    }
-
-    /** 
-     *  Get the Company's logo
-     *
-     *  @return string
-     */
-    public function getLogo() {
-        return $this->_data['logo_path'];
-    }
-
-    /** 
-     *  Get the Company's parent company id
-     *
-     *  @return int
-     */
-    public function getParentCompanyID() {
-        return $this->_data['parent_company'];
-    }
-
-    /**
-     *  Get the Company's Movies
-     *
-     *  @return Movie[]
-     */
-    public function getMovies() {
-        $movies = array();
-
-        foreach($this->_data['movies']['results'] as $data){
-            $movies[] = new Movie($data);
-        }
-
-        return $movies;
+    public function getURL() {
+        return $this->_data['url'];
     }
 
     /**
@@ -116,10 +77,10 @@ class Company {
      *  @param string $item The item of the $data array you want
      *  @return array
      */
-    public function get($item = '') {
+    public function get($item = ''){
         return (empty($item)) ? $this->_data : $this->_data[$item];
     }
-
+    
     //------------------------------------------------------------------------------
     // Export
     //------------------------------------------------------------------------------

@@ -1,4 +1,9 @@
 <?php
+
+
+namespace buibr\tmdbapi\classes\config;
+
+
 /**
  *  This class handles all the data you can get from the api Configuration
  *
@@ -94,6 +99,7 @@ class APIConfiguration {
         return $this->_data['images']['still_sizes'];
     }
 
+    
     /**
      *  Get Generic.<br>
      *  Get a item of the array, you should not get used to use this, better use specific get's.

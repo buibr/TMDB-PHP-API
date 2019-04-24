@@ -1,4 +1,9 @@
 <?php
+
+namespace buibr\tmdbapi\classes\data;
+
+use buibr\tmdbapi\classes\data\Episode;
+
 /**
  * 	This class handles all the data you can get from a Season
  *
