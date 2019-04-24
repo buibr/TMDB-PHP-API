@@ -25,7 +25,19 @@ class Configuration {
 	private $timezone = 'Europe/London';
 	private $adult = false;
 	private $debug = false;
-	private $appender;
+
+	/**
+	 *	Data Return Configuration - Manipulate if you want to tune your results
+	 */
+	private $appender = [
+		'movie'=> array('account_states', 'alternative_titles', 'credits', 'images','keywords', 'release_dates', 'videos', 'translations', 'similar', 'reviews', 'lists', 'changes', 'rating'),
+		'tvshow'=> array('account_states', 'alternative_titles', 'changes', 'content_rating', 'credits', 'external_ids', 'images', 'keywords', 'rating', 'similar', 'translations', 'videos'),
+		'season'=> array('changes', 'account_states', 'credits', 'external_ids', 'images', 'videos'),
+		'episode'=> array('changes', 'account_states', 'credits', 'external_ids', 'images', 'rating', 'videos'),
+		'person'=> array('movie_credits', 'tv_credits', 'combined_credits', 'external_ids', 'images', 'tagged_images', 'changes'),
+		'collection'=> array('images'),
+		'company'=> array('movies'),
+	];
 	
 	//------------------------------------------------------------------------------
 	// Constructor
@@ -39,19 +51,24 @@ class Configuration {
 	public function __construct($cnf) {
 		// Check if config is given and use default if not
 		// Note: There is no API Key inside the default conf
-		if(!isset($cnf)) {
-			require_once( dirname(__FILE__) . "/../../../configuration/default.php");
-		}
-		
+
+		if(empty($cnf['apikey']))
+			throw new \ErrorException("Api key is missing.");
+			
 		$this->setAPIKey($cnf['apikey']);
-		$this->setLang($cnf['lang']);
-		$this->setTimeZone('timezone');
-		$this->setAdult($cnf['adult']);
-		$this->setDebug($cnf['debug']);
 		
-		foreach($cnf['appender'] as $type => $appender) {
-			$this->setAppender($appender, $type);
-		}
+		if(isset($cnf['lang']))
+			$this->setTimeZone('lang');
+		
+		if(isset($cnf['timezone']))
+			$this->setTimeZone('timezone');
+
+		if(isset($cnf['adult']))
+			$this->setAdult($cnf['adult']);
+
+		if(isset($cnf['debug']))
+			$this->setDebug(  $cnf['debug']);
+
 	}
 	
 	//------------------------------------------------------------------------------
